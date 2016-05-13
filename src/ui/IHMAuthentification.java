@@ -93,14 +93,12 @@ public class IHMAuthentification extends JFrame implements ActionListener {
 	    }
 	    
 	    public Boolean isAuthorizedToLog() {
+		
 	        return false;
 	    }
 
 	    public void launchRepertoires() {
-//	        RepertoireIHM ihm = new RepertoireIHM();
-//	        ihm.fixerRepertoires(this.client.getRepertoires());
-//	        ihm.setVisible(true);
-
+		//Lancer repertoire
 	        this.setVisible(false);
 	        this.dispose();
 	    }
