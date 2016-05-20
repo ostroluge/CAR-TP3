@@ -11,10 +11,12 @@ import model.ProxyCarnet;
 
 public class TCPServer {
 
+    static Carnet carnet;
+    
 	public static void main(String[] args) throws Exception {
 
 		ServerSocket welcomeSocket = new ServerSocket(TCPClient.PORT);
-		Carnet carnet = new Carnet();
+		carnet = new Carnet();
 
 		while (true) {
 
@@ -46,5 +48,13 @@ public class TCPServer {
 
 			}
 		}
+	}
+
+	public static Carnet getCarnet() {
+	    return carnet;
+	}
+
+	public static void setCarnet(Carnet carnet) {
+	    TCPServer.carnet = carnet;
 	}
 }
