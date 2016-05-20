@@ -339,22 +339,12 @@ implements java.awt.event.ActionListener, javax.swing.event.ListSelectionListene
 	//
 	public static void main (String args[])
 	{
-		Repertoire carnet = new Carnet();
-		// Creation d'un repertoire d'adresses.
-		//carnet = new ????;
-
 		// Initialisation serveur
 		TCPServer server = new TCPServer();
 		// Initialisation client
 		TCPClient client = new TCPClient();
 		
-		// Creer l'IHM.
-		IHM ihm = new IHM();
-		// Lui indiquer le repertoire visualise. 
-		ihm.fixerRepertoire (carnet);
-
-		// Creation d'une fenetre.
-		//
+		IHMAuthentification ihm = new IHMAuthentification(client);
 		ihm.setVisible(true);
 	}
 }

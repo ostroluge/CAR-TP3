@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import model.Carnet;
+import model.Repertoire;
 import network.TCPClient;
 
 public class IHMAuthentification extends JFrame implements ActionListener {
@@ -94,12 +96,16 @@ public class IHMAuthentification extends JFrame implements ActionListener {
 	    
 	    public Boolean isAuthorizedToLog() {
 		
-	        return false;
+	        return true;
 	    }
 
 	    public void launchRepertoires() {
-		//Lancer repertoire
-	        this.setVisible(false);
-	        this.dispose();
+		IHM ihmRepertoire = new IHM();
+		Repertoire carnet = new Carnet();
+		ihmRepertoire.fixerRepertoire (carnet);
+	
+		this.setVisible(false);
+		this.dispose();
+		ihmRepertoire.setVisible(true);
 	    }
 }
