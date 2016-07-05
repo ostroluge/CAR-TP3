@@ -51,7 +51,11 @@ public class Login extends HttpServlet {
 	    //AUthentifier l'user
 	    //Créer une session et stocker login mdp host et port
 	    //Affiche la liste des annuaires etc...
-	    getServletContext().getRequestDispatcher("/WEB-INF/resume.jsp").forward(request, response);
+//	    getServletContext().getRequestDispatcher("/WEB-INF/resume.jsp").forward(request, response);
+	    
+	    request.setAttribute("Carnet", TCPServer.getCarnet());
+	    
+	    getServletContext().getRequestDispatcher("/WEB-INF/contenuCarnet.jsp").forward(request, response);
 	}
 	
 	private void connectAnnuaire(){

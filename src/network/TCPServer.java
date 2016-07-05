@@ -4,9 +4,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 import message.Instruction;
 import model.Carnet;
+import model.Personne;
 import model.ProxyCarnet;
 
 public class TCPServer {
@@ -51,7 +54,11 @@ public class TCPServer {
 	}
 
 	public static Carnet getCarnet() {
-	    return carnet;
+	    if (carnet == null) {
+	    	List<Personne> personnes = new ArrayList<>();
+	    	return new Carnet(personnes);
+	    }
+		return carnet;
 	}
 
 	public static void setCarnet(Carnet carnet) {

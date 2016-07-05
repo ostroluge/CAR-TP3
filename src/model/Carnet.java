@@ -11,6 +11,10 @@ public class Carnet implements Repertoire {
 		
 	}
 	
+	public Carnet(List<Personne> personnes) {
+		this.personnes = personnes;
+	}
+	
 	public boolean ajouterPersonne(Personne personne) {
 		return personnes.add(personne);
 	}
