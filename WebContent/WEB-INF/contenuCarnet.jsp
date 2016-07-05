@@ -8,9 +8,15 @@
 </head>
 
 <body>
-	<%@ page import="model.Carnet"%>
+	<%@ page import="model.Carnet,model.ProxyCarnet,model.Personne" %>
 
 	<% Carnet carnet = (Carnet) request.getAttribute("Carnet");
+		ProxyCarnet proxyCarnet = (ProxyCarnet) request.getAttribute("ProxyCarnet");
+		if (proxyCarnet != null) {
+			out.println("proxyCarnet != null");
+			proxyCarnet.ajouterPersonne(new Personne("Jean", "jean@yopmail.com",
+					"jean.com", "je suis marrant"));
+		}
 		if (carnet.personnes == null || carnet.personnes.isEmpty()) {
 			out.println("Pas d'entrée dans le répertoire!");
 		} else {

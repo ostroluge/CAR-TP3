@@ -1,8 +1,10 @@
 package message;
 
+import java.io.Serializable;
+
 import model.Personne;
 
-public class Instruction {
+public class Instruction implements Serializable {
 
 	public int codeInstruction;
 	public String nomPersonne;

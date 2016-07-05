@@ -54,6 +54,7 @@ public class Login extends HttpServlet {
 //	    getServletContext().getRequestDispatcher("/WEB-INF/resume.jsp").forward(request, response);
 	    
 	    request.setAttribute("Carnet", TCPServer.getCarnet());
+	    request.setAttribute("ProxyCarnet", TCPClient.getProxyCarnet());
 	    
 	    getServletContext().getRequestDispatcher("/WEB-INF/contenuCarnet.jsp").forward(request, response);
 	}

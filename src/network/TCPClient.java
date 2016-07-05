@@ -5,7 +5,7 @@ import model.ProxyCarnet;
 public class TCPClient {
 	
 	public static final String HOSTNAME = "localhost";
-	public static final int PORT = 9000;
+	public static final int PORT = 3000;
 	static ProxyCarnet proxyCarnet;
 	
 	public static void main(String[] args) {
@@ -18,7 +18,10 @@ public class TCPClient {
 	}
 
 	public static ProxyCarnet getProxyCarnet() {
-	    return proxyCarnet;
+	    if (proxyCarnet == null) {
+	    	return new ProxyCarnet(HOSTNAME, PORT);
+	    }
+		return proxyCarnet;
 	}
 
 	public static void setProxyCarnet(ProxyCarnet proxyCarnet) {
